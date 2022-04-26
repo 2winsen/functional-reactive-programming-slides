@@ -1,0 +1,17 @@
+.out-of-scope {
+    opacity: 0.2;
+}
+
+.padded-list li {
+    padding-left: 0.5em;
+}
+
+.reference {
+    opacity: 0.6;
+    font-size: 0.8em;
+    display: block;
+}
+
+.secondary {
+    color: #FF2873;
+}

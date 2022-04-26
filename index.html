@@ -1,0 +1,392 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>frp-slides</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css">
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h3>Functional Reactive Programming</h3>
+				<p>
+					<small>hey I am <b>Vitalijs Sakels</b>, JavaScript developer at <a
+							href="https://www.evolution.com/">Evolution</a></small>
+				</p>
+			</section>
+
+			<section>
+				<h3>Plan</h3>
+				<ul>
+					<li>Functional code vs imperative code</li>
+					<li>Reactive code vs imperative code</li>
+					<li>RxJS</li>
+					<li>Code samples</li>
+					<li>Coding exercises</li>
+					<li class="out-of-scope">Break (if we need one)</li>
+					<hr>
+					<li>Advanced code sample - simple Bingo game - TODO</li>
+					<li>Homework - TODO</li>
+				</ul>
+			</section>
+
+			<section>
+				<h4>Imperative code (HOW)</h4>
+				<pre data-id="code-animation">
+					<code class="hljs javascript" data-trim data-line-numbers="1|2-4|5">
+					const names = ["poker", "roulette", "blackjack"];
+					for (let i = 0; i < names.length; i++) {
+						names[i] = names[i].toUpperCase();
+					}
+					console.log(names); // ["POKER", "ROULETTE", "BLACKJACK"]
+					</code>
+				</pre>
+			</section>
+
+			<section>
+				<h4> Functional code (WHAT)</h4>
+				<pre data-id="code-animation">
+					<code class="hljs javascript" data-trim data-line-numbers="1|2-3|4-5">
+					const names = ["poker", "roulette", "blackjack"];
+					const namesUpperCase = names
+						.map(name => name.toUpperCase());
+					console.log(names); // ["poker", "roulette", "blackjack"]
+					console.log(namesUpperCase); // ["POKER", "ROULETTE", "BLACKJACK"]
+					</code>
+				</pre>
+			</section>
+
+			<section data-auto-animate>
+				<pre data-id="code-animation">
+					<code class="hljs javascript" data-trim data-line-numbers="1-3|6-7">
+					function toUpperCase(name) {
+						return name.toUpperCase();
+					}
+					
+					const names = ["poker", "roulette", "blackjack"];
+					const namesUpperCase = names
+						.map(toUpperCase);
+					console.log(names); // ["poker", "roulette", "blackjack"]
+					console.log(namesUpperCase); // ["POKER", "ROULETTE", "BLACKJACK"]
+					</code>
+				</pre>
+			</section>
+
+			<section>
+				<h4>Imperative code vs reactive code</h4>
+				<pre data-id="code-animation">
+					<code class="hljs javascript" data-trim data-line-numbers="1-3|1-5|1-9">
+						let a = 0;
+						let b = 1;
+						let c = 2;
+						a = b + c;
+						console.log(a); // 3
+
+						b = 10;
+						c = 20;
+						console.log(a); // 3
+					</code>
+				</pre>
+			</section>
+
+			<section>
+				<h4>Reactive code (RxJS)</h4>
+				<pre data-id="code-animation">
+					<code class="hljs javascript" data-trim data-line-numbers="1-3|1-4|1-8|1-11">
+						import { map, of, zip } from "rxjs";
+
+						const b = of(1, 10);
+						const c = of(2, 20);
+						const a = zip(b, c)
+							.pipe(
+								map(([b, c]) => b + c)
+							);
+						a.subscribe((value) => console.log(value));
+						// 3
+						// 30
+					</code>
+				</pre>
+			</section>
+
+			<section>
+				<h3>Definition</h3>
+				<blockquote cite="https://en.wikipedia.org/wiki/Reactive_programming">
+					&ldquo; ...reactive programming is a declarative programming paradigm concerned with data streams
+					and
+					the propagation of change. With this paradigm, it's possible to express static (e.g., arrays) or
+					dynamic
+					(e.g., event emitters) data streams with ease...&rdquo;
+					<a href="https://en.wikipedia.org/wiki/Reactive_programming" target="_blank">Wikipedia</a>
+				</blockquote>
+			</section>
+
+			<section>
+				<h3>Most popular libraries</h3>
+				<ul>
+					<li>
+						<a href="https://rxjs.dev/" target="_blank">RxJS</a>
+					</li>
+					<li>
+						<a href="https://baconjs.github.io/" target="_blank">Bacon.js</a>
+					</li>
+					<li>
+						<a href="https://ramdajs.com/" target="_blank">Ramda</a>
+					</li>
+				</ul>
+			</section>
+
+			<section data-background-iframe="https://www.npmtrends.com/baconjs-vs-ramda-vs-rxjs"></section>
+
+			<section>
+				<h3>reactivex</h3>
+				<iframe data-src="https://reactivex.io/" style="width: 95vw; height: 60vh;"></iframe>
+			</section>
+
+			<section>
+				<h3>
+					<a href="https://rxjs.dev/" target="_blank">
+						<img src="https://rxjs.dev/generated/images/marketing/home/Rx_Logo-512-512.png" alt="rxjs logo"
+							style="height: 220px; margin: 0 auto 4rem auto; background: transparent; display: block;">
+						RxJS
+					</a>
+				</h3>
+			</section>
+
+			<section>
+				<blockquote cite="https://en.wikipedia.org/wiki/Reactive_programming">
+					Think of RxJS as Lodash for events.
+					<p class="reference">
+						<a href="https://rxjs.dev/guide/overview" target="_blank">rxjs.dev</a>
+					</p>
+				</blockquote>
+			</section>
+
+			<section>
+				<h3>Topics</h3>
+				<ul>
+					<li>streams (observables)</li>
+					<li>operators</li>
+					<li>marble diagrams</li>
+					<li>unsubscribe approaches</li>
+					<li class="out-of-scope">new Observable</li>
+					<li class="out-of-scope">subjects</li>
+					<li class="out-of-scope">schedulers</li>
+					<li class="out-of-scope">hot/cold observables</li>
+				</ul>
+			</section>
+
+			<section>
+				<section>
+					<h3></h3>
+					<blockquote cite="https://en.wikipedia.org/wiki/Reactive_programming">
+						&ldquo;What is the difference between an <span class="secondary">Array</span> and an <span
+							class="secondary">Event</span>?&rdquo;
+						<p class="reference">
+							<a
+								href="https://medium.com/@andrestaltz/2-minute-introduction-to-rx-24c8ca793877" target="_blank">2-minute-introduction-to-rx</a>
+						</p>
+					</blockquote>
+				</section>
+
+				<section>
+					<pre data-id="code-animation">
+						<code class="hljs javascript" data-trim data-line-numbers>
+						import { filter, from, fromEvent, map, tap } from "rxjs";
+
+						const names = ["poker", "blackjack", "roulette"];
+						names
+							.filter(n => n.length > 5)
+							.map(n => "Live " + n)
+							.forEach(n => console.log(n));
+		
+						from(names)
+							.pipe(
+								filter(n => n.length > 5),
+								map(n => "Live " + n),
+								tap(n => console.log(n)),
+							)
+							.subscribe();
+		
+						fromEvent<MouseEvent>(document, "click")
+							.pipe(
+								filter(e => e.y > 200),
+								map(e => [e.x, e.y]),
+								tap(e => console.log(e))
+							)
+							.subscribe();
+						</code>
+					</pre>
+				</section>
+			</section>
+
+			<section>
+				<h3>Code sample</h3>
+				<a href="https://codesandbox.io/s/loving-zeh-qlygyv"
+					target="_blank">https://codesandbox.io/s/loving-zeh-qlygyv</a>
+			</section>
+
+			<section>
+				<blockquote
+					cite="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754#the-introduction-to-reactive-programming-youve-been-missing">
+					Everything is a stream.
+					<p class="reference">
+						<a
+							href="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754#the-introduction-to-reactive-programming-youve-been-missing" target="_blank">#the-introduction-to-reactive-programming-youve-been-missing</a>
+					</p>
+				</blockquote>
+			</section>
+
+			<section>
+				<h3>Code sample - Countdown</h3>
+				<a href="https://codesandbox.io/s/vigilant-joliot-vxp2mi"
+					target="_blank">https://codesandbox.io/s/vigilant-joliot-vxp2mi</a>
+			</section>
+
+			<section>
+				<h3>Scope</h3>
+				<ul>
+					<li>streams (observables) ✅</li>
+					<li>operators ✅</li>
+					<li>marble diagrams ✅</li>
+					<li>unsubscribe approaches</li>
+					<li class="out-of-scope">new Observable</li>
+					<li class="out-of-scope">subjects</li>
+					<li class="out-of-scope">schedulers</li>
+					<li class="out-of-scope">hot/cold observables</li>
+				</ul>
+			</section>
+
+			<section>
+				<section>
+					<h3>Code sample - Unsubscribe</h3>
+					<a href="https://codesandbox.io/s/loving-zeh-qlygyv"
+						target="_blank">https://codesandbox.io/s/loving-zeh-qlygyv</a>
+				</section>
+
+				<section data-auto-animate>
+					<pre data-id="code-animation" style="height: 80vh;">
+						<code class="hljs javascript" data-trim data-line-numbers>
+							import { fromEvent, interval, take, takeUntil, tap } from "rxjs";
+	
+							const button = document.getElementById("unsubscribeButton") as HTMLButtonElement;
+							const unsubscribe$ = fromEvent(
+							  button,
+							  "click"
+							)
+							
+							const subscription = interval(500)
+							  .pipe(
+								tap(console.log),
+								// 1
+								// take(5),
+								// 3
+								// takeUntil(unsubscribe$),
+							  )
+							  .subscribe();
+							
+							// 2
+							// setTimeout(() => {
+							//   subscription.unsubscribe();
+							// }, 3000);
+						</code>
+					</pre>
+				</section>
+			</section>
+
+			<section>
+				<h3>Scope</h3>
+				<ul>
+					<li>streams (observables) ✅</li>
+					<li>operators ✅</li>
+					<li>marble diagrams ✅</li>
+					<li>unsubscribe approaches ✅</li>
+					<li class="out-of-scope">new Observable</li>
+					<li class="out-of-scope">subjects</li>
+					<li class="out-of-scope">schedulers</li>
+					<li class="out-of-scope">hot/cold observables</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>RxJS exercise 1</h3>
+				<a href="https://codesandbox.io/s/vigilant-joliot-vxp2mi"
+					target="_blank">https://codesandbox.io/s/vigilant-joliot-vxp2mi</a>
+			</section>
+
+			<section data-background-iframe="https://www.bigtimer.net/?minutes=10&repeat=false"></section>
+
+			<section>
+				<h3>Advanced code sample - simple Bingo game</h3>
+			</section>
+
+			<section>
+				<h3>RxJS exercise 2</h3>
+				<a href="https://codesandbox.io/s/rxjs-dogs-exercise-0pvtqc"
+					target="_blank">hhttps://codesandbox.io/s/rxjs-dogs-exercise-0pvtqc</a>
+			</section>
+
+			<section data-background-iframe="https://www.bigtimer.net/?minutes=15&repeat=false"></section>
+
+			<section>
+				<h3>Homework</h3>
+			</section>
+
+			<section>
+				<h2 style="text-align: right;">THE END</h2>
+			</section>
+
+			<section>
+				<h3>My favorite links on topic</h3>
+				<ul class="padded-list" style="list-style-type: '\1F525';">
+					<li>
+						<a href="https://rxjs.dev/" target="_blank">rxjs.dev</a>
+					</li>
+					<li>
+						<a href="https://www.learnrxjs.io/" target="_blank">learnrxjs.io</a>
+					</li>
+					<li>
+						<a href="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754#the-introduction-to-reactive-programming-youve-been-missing"
+							target="_blank">the-introduction-to-reactive-programming-youve-been-missing</a>
+					</li>
+					<li>
+						<a href="http://reactivex.io/learnrx/" target="_blank">reactivex.io/learnrx (Old but gold)</a>
+					</li>
+					<li>
+						<a href="https://egghead.io/courses/professor-frisby-introduces-composable-functional-javascript"
+							target="_blank">professor-frisby-introduces-composable-functional-javascript</a>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
