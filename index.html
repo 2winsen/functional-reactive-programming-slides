@@ -37,8 +37,8 @@
 					<li>Coding exercises</li>
 					<li class="out-of-scope">Break (if we need one)</li>
 					<hr>
-					<li>Advanced code sample - simple Bingo game - TODO</li>
-					<li>Homework - TODO</li>
+					<li>Advanced code sample - simple Bingo game</li>
+					<li>Homework</li>
 				</ul>
 			</section>
 
@@ -123,7 +123,7 @@
 			<section>
 				<h3>Definition</h3>
 				<blockquote cite="https://en.wikipedia.org/wiki/Reactive_programming">
-					&ldquo; ...reactive programming is a declarative programming paradigm concerned with data streams
+					&ldquo; ...reactive programming is a declarative programming <span class="secondary">paradigm</span> concerned with data streams
 					and
 					the propagation of change. With this paradigm, it's possible to express static (e.g., arrays) or
 					dynamic
@@ -180,6 +180,7 @@
 					<li>operators</li>
 					<li>marble diagrams</li>
 					<li>unsubscribe approaches</li>
+					<li>combination of streams</li>
 					<li class="out-of-scope">new Observable</li>
 					<li class="out-of-scope">subjects</li>
 					<li class="out-of-scope">schedulers</li>
@@ -188,16 +189,21 @@
 			</section>
 
 			<section>
+				<blockquote cite="https://en.wikipedia.org/wiki/Reactive_programming">
+					&ldquo;What is the difference between an <span class="secondary">Array</span> and an <span
+						class="secondary">Event</span>?&rdquo;
+					<p class="reference">
+						<a
+							href="https://medium.com/@andrestaltz/2-minute-introduction-to-rx-24c8ca793877" target="_blank">2-minute-introduction-to-rx</a>
+					</p>
+				</blockquote>
+			</section>
+
+			<section>
 				<section>
-					<h3></h3>
-					<blockquote cite="https://en.wikipedia.org/wiki/Reactive_programming">
-						&ldquo;What is the difference between an <span class="secondary">Array</span> and an <span
-							class="secondary">Event</span>?&rdquo;
-						<p class="reference">
-							<a
-								href="https://medium.com/@andrestaltz/2-minute-introduction-to-rx-24c8ca793877" target="_blank">2-minute-introduction-to-rx</a>
-						</p>
-					</blockquote>
+					<h3>Code sample</h3>
+					<a href="https://codesandbox.io/s/loving-zeh-qlygyv"
+						target="_blank">https://codesandbox.io/s/loving-zeh-qlygyv</a>
 				</section>
 
 				<section>
@@ -232,12 +238,6 @@
 			</section>
 
 			<section>
-				<h3>Code sample</h3>
-				<a href="https://codesandbox.io/s/loving-zeh-qlygyv"
-					target="_blank">https://codesandbox.io/s/loving-zeh-qlygyv</a>
-			</section>
-
-			<section>
 				<blockquote
 					cite="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754#the-introduction-to-reactive-programming-youve-been-missing">
 					Everything is a stream.
@@ -255,12 +255,13 @@
 			</section>
 
 			<section>
-				<h3>Scope</h3>
+				<h3>Topics</h3>
 				<ul>
 					<li>streams (observables) ✅</li>
 					<li>operators ✅</li>
 					<li>marble diagrams ✅</li>
 					<li>unsubscribe approaches</li>
+					<li>combination of streams</li>
 					<li class="out-of-scope">new Observable</li>
 					<li class="out-of-scope">subjects</li>
 					<li class="out-of-scope">schedulers</li>
@@ -271,8 +272,8 @@
 			<section>
 				<section>
 					<h3>Code sample - Unsubscribe</h3>
-					<a href="https://codesandbox.io/s/loving-zeh-qlygyv"
-						target="_blank">https://codesandbox.io/s/loving-zeh-qlygyv</a>
+					<a href="https://codesandbox.io/s/empty-1tdmpx"
+						target="_blank">https://codesandbox.io/s/empty-1tdmpx</a>
 				</section>
 
 				<section data-auto-animate>
@@ -306,12 +307,13 @@
 			</section>
 
 			<section>
-				<h3>Scope</h3>
+				<h3>Topics</h3>
 				<ul>
 					<li>streams (observables) ✅</li>
 					<li>operators ✅</li>
 					<li>marble diagrams ✅</li>
 					<li>unsubscribe approaches ✅</li>
+					<li>combination of streams</li>
 					<li class="out-of-scope">new Observable</li>
 					<li class="out-of-scope">subjects</li>
 					<li class="out-of-scope">schedulers</li>
@@ -320,28 +322,91 @@
 			</section>
 
 			<section>
-				<h3>RxJS exercise 1</h3>
-				<a href="https://codesandbox.io/s/vigilant-joliot-vxp2mi"
-					target="_blank">https://codesandbox.io/s/vigilant-joliot-vxp2mi</a>
-			</section>
-
-			<section data-background-iframe="https://www.bigtimer.net/?minutes=10&repeat=false"></section>
-
-			<section>
-				<h3>Advanced code sample - simple Bingo game</h3>
+				<section>
+					<h3>Code sample - Combination of streams</h3>
+					<a href="https://codesandbox.io/s/combination-of-streams-sj0xuq"
+						target="_blank">https://codesandbox.io/s/combination-of-streams-sj0xuq</a>
+				</section>
+				<section>
+				</section>
 			</section>
 
 			<section>
-				<h3>RxJS exercise 2</h3>
-				<a href="https://codesandbox.io/s/rxjs-dogs-exercise-0pvtqc"
-					target="_blank">hhttps://codesandbox.io/s/rxjs-dogs-exercise-0pvtqc</a>
+				<h3>Topics</h3>
+				<ul>
+					<li>streams (observables) ✅</li>
+					<li>operators ✅</li>
+					<li>marble diagrams ✅</li>
+					<li>unsubscribe approaches ✅</li>
+					<li>combination of streams ✅</li>
+					<li class="out-of-scope">new Observable</li>
+					<li class="out-of-scope">subjects</li>
+					<li class="out-of-scope">schedulers</li>
+					<li class="out-of-scope">hot/cold observables</li>
+				</ul>
+			</section>
+
+			<section>
+				<section>
+					<h3>RxJS exercise 1</h3>
+					<a href="https://codesandbox.io/s/rxjs-exercise-1-0gwdmc"
+						target="_blank">https://codesandbox.io/s/rxjs-exercise-1-0gwdmc</a>
+				</section>
+				<section>
+					<h3>Possible solution</h3>
+					<a href="https://codesandbox.io/s/rxjs-exercise-1-solution-dcf7q3"
+						target="_blank">https://codesandbox.io/s/rxjs-exercise-1-solution-dcf7q3</a>
+				</section>
 			</section>
 
 			<section data-background-iframe="https://www.bigtimer.net/?minutes=15&repeat=false"></section>
 
+			<!-- TODO -->
 			<section>
-				<h3>Homework</h3>
+				<h3>Advanced code sample - simple Bingo game</h3>
+				<a href="https://codesandbox.io/s/bingo-frp-nlfdrv"
+					target="_blank">https://codesandbox.io/s/bingo-frp-nlfdrv</a>
 			</section>
+
+			<section>
+				<section>
+					<h3>RxJS exercise 2</h3>
+					<a href="https://codesandbox.io/s/rxjs-dogs-exercise-0pvtqc"
+						target="_blank">https://codesandbox.io/s/rxjs-dogs-exercise-0pvtqc</a>
+				</section>
+				<section>
+					<h3>Possible solution</h3>
+					<a href="https://codesandbox.io/s/rxjs-dogs-solution-hv19yb"
+						target="_blank">https://codesandbox.io/s/rxjs-dogs-solution-hv19yb</a>
+				</section>
+			</section>
+
+			<section data-background-iframe="https://www.bigtimer.net/?minutes=15&repeat=false"></section>
+
+			<section data-markdown style="font-size: 0.5em; text-align: left; padding: 0 3em;">
+				<textarea data-template>
+					# Homework
+					
+					Your task is to develop a simple game for catching cats. Our example: [Cats Catcher](http://cat-catcher-frp.surge.sh/).					
+					What is required:  
+					
+					- Use RxJS or any other FRP libraries 
+					- Avoid of using imperative code as much as possible.  
+					- Implement:
+					  - board with multiple holes (hardcoded or dynamic generated)
+					  - a cat should appear every second or so in a free random place
+					  - should be possible to catch a cat
+					  - cat catch count
+					- Define types as much and clear as possible.
+					- Have to work on the latest Google Chrome on the desktop  
+					(all other devices and browsers are up to you).
+					
+					All other ideas are up to you and your imagination. For example:
+					- Implement "game over" when a user doesn't catch defined amount of cats
+					- Dynamic generated board
+					- Using React or Canvas or Native DOM elements are up to you.					
+				</textarea>
+			  </section>
 
 			<section>
 				<h2 style="text-align: right;">THE END</h2>
